@@ -136,6 +136,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import Form from '../component/Form'
 import { ICard } from '../modals/FormModal'
 
@@ -202,21 +203,14 @@ const EnrollmentForm: React.FC<ICard> = (props) => {
 
     return (
         <>
-            <footer className="card-footer justify-content-center">
                 <button className="btn btn-primary" onClick={handleShow}>buy Now</button>
-            </footer>
-
-            <Modal
-                show={show}
-                onHide={handleClose}
-                backdrop="static"
-                keyboard={false}
-            >
-                <Modal.Header closeButton className='bg-dark text-light'>
+            {/* <footer className="card-footer justify-content-center">
+            </footer>  */}
+            <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+            <Modal.Header closeButton className='bg-dark text-light'>
                     <Modal.Title>Enrollment Form</Modal.Title>
                 </Modal.Header>
-                <div className=''>
-                    <Modal.Body className='pt-0 bg-secondary text-light'>
+                  <Modal.Body className='pt-0 bg-secondary text-light'>
                         <div className="container pb-5">
                             <div className="row justify-content-center mb-5 pb-5">
                                 <div className=" col-6 mb-3 pb-5" >
@@ -299,9 +293,12 @@ const EnrollmentForm: React.FC<ICard> = (props) => {
                             </div>
                         </div>
                     </Modal.Body>
-                </div>
-            </Modal>
-        </>
+                
+            </Modal>       
+
+
+            </>
+       
     );
 }
 
